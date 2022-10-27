@@ -45,7 +45,7 @@ def create_app():
     _app.wsgi_app = ProxyFix(_app.wsgi_app)
 
     registry = PackageRegistry(
-        es_connection_string=os.environ.get('OS_ELASTICSEARCH_ADDRESS',
+        es_connection_string=os.environ.get('ELASTICSEARCH_URL',
                                             'localhost:9200'))
     manager = OSCubeManager(get_engine(), registry)
 
