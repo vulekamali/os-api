@@ -19,6 +19,7 @@ RUN apk add --no-cache --virtual .build-deps \
     build-base \
     ca-certificates \
     && update-ca-certificates \
+    && pip install setuptools==45 \
     && pip install -r requirements.txt \
     && apk del --no-cache .build-deps
 
